@@ -1,20 +1,34 @@
-<h1>Listing Articles</h1>
-<%= link_to 'New article', new_article_path %>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-    <th colspan="3"></th>
-  </tr>
+<div class="blog-header">
+  <h1 class="blog-title">Blog Articles</h1>
+  <p class="lead blog-description">AnotherOneBlog in action!</p>
+</div>
 
-  <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.title %></td>
-        <td><%= article.text %></td>
-        <td><%= link_to 'Show', article_path(article) %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article_path(article),
-                        method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-  <% end %>
-</table>
+<%= link_to 'New article', new_article_path, role: "button", class: "btn btn-lg btn-default" %>
+
+<div class="row">
+  <div class="col-sm-8 blog-main">
+
+    <% @articles.each do |article| %>
+
+    <div class="blog-post">
+      <h2 class="blog-post-title"><%= article.title %></h2>
+      <p class="blog-post-meta">Creation date by <a href="#">User</a></p>
+
+      <p><%= article.text %></p>
+
+      <p>
+        <%= link_to 'Show', article_path(article), role: "button", class: "btn btn-default" %>
+        <%= link_to 'Edit', edit_article_path(article), role: "button", class: "btn btn-default" %>
+        <%= link_to 'Destroy', article_path(article), method: :delete,
+                    data: { confirm: 'Are you sure?' }, role: "button", class: "btn btn-default" %>
+      </p>
+
+    </div><!-- /.blog-post -->
+
+    <hr>
+
+    <% end %>
+
+  </div><!-- /.blog-main -->
+</div><!-- /.row-->
+
