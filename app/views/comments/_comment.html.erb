@@ -1,15 +1,14 @@
-<p>
-  <strong>Commenter:</strong>
-  <%= comment.commenter %>
-</p>
+<div class="row">
 
-<p>
-  <strong>Comment:</strong>
-  <%= comment.body %>
-</p>
+  <div class="col-sm-6">
+    <a href="#"><%= comment.commenter %></a><br>
+    <%= comment.body %>
+  </div>
 
-<p>
-  <%= link_to 'Destroy Comment', [comment.article, comment],
+  <div>
+  <%= link_to 'Delete comment', [comment.article, comment],
               method: :delete,
-              data: { confirm: 'Are you sure?' } %>
-</p>
+              data: { confirm: 'Are you sure?' }, role: "button", class: "btn btn-xs btn-default" %>
+  </div>
+  <br>
+</div>

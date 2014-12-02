@@ -1,13 +1,7 @@
-<%= form_for([@article, @article.comments.build]) do |f| %>
-    <p>
-      <%= f.label :commenter %><br>
-      <%= f.text_field :commenter %>
-    </p>
-    <p>
-      <%= f.label :body %><br>
-      <%= f.text_area :body %>
-    </p>
-    <p>
-      <%= f.submit %>
-    </p>
+<%= bootstrap_form_for([@article, @article.comments.build]) do |f| %>
+
+    <%= f.text_field :commenter, hide_label: true, placeholder: "Enter your name" %>
+    <%= f.text_area :body, hide_label: true, placeholder: "Enter your comment" %>
+    <%= f.submit "Add comment"%>
+
 <% end %>

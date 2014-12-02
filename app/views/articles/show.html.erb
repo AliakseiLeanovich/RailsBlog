@@ -1,18 +1,38 @@
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+<div class="row">
+  <div class="col-sm-8 blog-main">
 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
 
-<h2>Comments</h2>
-<%= render @article.comments %>
+    <div class="blog-post">
+      <h2 class="blog-post-title"><%= @article.title %></h2>
 
-<h2>Add a comment:</h2>
-<%= render "comments/form" %>
 
-<%= link_to 'Back', articles_path %>
-| <%= link_to 'Edit', edit_article_path(@article) %>
+      <p><%= @article.text %></p>
+      <p class="blog-post-meta">Created by <a href="#">User</a> at Date</p>
+
+
+    </div><!-- /.blog-post -->
+
+    <p>
+      <%= link_to 'Back', articles_path, role: "button", class: "btn btn-default" %>
+      <%= link_to 'Edit', edit_article_path(@article), role: "button", class: "btn btn-default" %>
+    </p>
+    <hr>
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+
+    <h4>Comments</h4>
+    <%= render @article.comments %>
+
+    <br>
+
+    <h4>Add a comment:</h4>
+    <%= render "comments/form" %>
+
+  </div>
+</div>
+
+

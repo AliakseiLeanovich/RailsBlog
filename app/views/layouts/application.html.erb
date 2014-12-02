@@ -16,7 +16,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">AnotherOneBlog</a>
+          <%= link_to 'AnotherOneBlog', articles_path, class: "navbar-brand" %>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -25,14 +25,14 @@
         </div><!--/.nav-collapse -->
       </div>
 </nav>
-    
+
     <div class="container">
       <%= yield %>
     </div>
 
     <footer class="footer">
       <div class="container">
-        <p class="text-muted">&#169; RedMonkeyProduction.</p>
+        <p class="text-muted">&#169; RedMonkeyProduction 2014</p>
       </div>
     </footer>
 
