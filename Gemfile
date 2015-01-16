@@ -44,3 +44,5 @@ gem 'autoprefixer-rails'
 
 #bootstrap forms
 gem 'bootstrap_form'
+
+gem 'devise'

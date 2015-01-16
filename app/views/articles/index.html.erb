@@ -1,12 +1,12 @@
 <!--div class="blog-header">
   <h1 class="blog-title">Blog Articles</h1>
   <p class="lead blog-description">AnotherOneBlog in action!</p>
-</div-->
+</div>
 
 <p>
-  <%= link_to 'New post', new_article_path, role: "button", class: "btn btn-lg btn-success" %>
+  <!%= link_to 'New post', new_article_path, role: "button", class: "btn btn-lg btn-success" %>
   <hr>
-</p>
+</p-->
 
 <div class="row">
   <div class="col-sm-8 blog-main">
@@ -15,7 +15,8 @@
 
     <div class="blog-post">
       <h2 class="blog-post-title"><%= article.title %></h2>
-      <p class="blog-post-meta">Creation date by <a href="#">User</a></p>
+      <!%= article.user.email %>
+      <p class="blog-post-meta"><%= article.created_at.strftime("%d/%m/%Y %H:%M") %> by <a href="#"></a></p>
 
       <p><%= article.text %></p>
 
