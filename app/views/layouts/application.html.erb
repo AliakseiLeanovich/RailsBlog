@@ -16,31 +16,42 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <%= link_to 'AnotherOneBlog', articles_path, class: "navbar-brand" %>
+          <%= link_to 'AnotherOneBlog', root_path, class: "navbar-brand" %>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/">Main</a></li>
-            <li><%= link_to 'New post', new_article_path %></li>
+            <li><%= link_to 'All posts', articles_path %></li>
+            <li><%= link_to 'Create post', new_article_path %></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
-                <li class="navbar-brand"><%= current_user.email %></li>
+                <li><a href="#"><%= current_user.email %></a></li>
                 <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
             <% else %>
                 <li><%= link_to 'Sign in', new_user_session_path %></li>
                 <li><%= link_to 'Sign up', new_user_registration_path %></li>
             <% end %>
+
           </ul>
 
         </div><!--/.nav-collapse -->
       </div>
 </nav>
 
+
+
     <div class="container">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <% if notice %>
+          <div class="alert alert-success" role="alert"><%= notice %></div>
+      <% end %>
+      <% if alert %>
+          <div class="alert alert-danger" role="alert"><%= alert %></div>
+      <% end %>
+
+      <!--p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p-->
+
       <%= yield %>
     </div>
 

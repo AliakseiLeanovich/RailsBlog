@@ -6,7 +6,7 @@ html {
 }
 
 body {
-  padding-top: 70px;
+  padding-top: 90px;
   /* Margin bottom by footer height */
   margin-bottom: 60px;
   font-family: Georgia, "Times New Roman", Times, serif;
@@ -41,4 +41,9 @@ h6, .h6 {
 .blog-main {
   font-size: 18px;
   line-height: 1.5;
+}
+
+.navbar {
+  font-size: 16px;
+  height: 40px;
 }

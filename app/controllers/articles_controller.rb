@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
 
   before_filter :authenticate_user!
+  before_filter :get_user_article, only: [:edit, :update, :destroy]
 
   def index
     @articles = Article.all
@@ -11,7 +12,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(article_params)
+    @article = current_user.articles.new(article_params)
 
     if @article.save
       redirect_to @article
@@ -25,12 +26,9 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
   end
 
   def update
-    @article = Article.find(params[:id])
-
     if @article.update(article_params)
       redirect_to @article
     else
@@ -39,9 +37,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article = Article.find(params[:id])
     @article.destroy
-
     redirect_to articles_path
   end
 
@@ -50,5 +46,11 @@ class ArticlesController < ApplicationController
     params.require(:article).permit(:title, :text)
   end
 
+  def get_user_article
+    @article = Article.find(params[:id])
+    if current_user != @article.user
+      redirect_to @article, alert: "Due to this article was created by another author you have no permissions to edit it"
+    end
+  end
 
 end

@@ -16,15 +16,12 @@
     <div class="blog-post">
       <h2 class="blog-post-title"><%= article.title %></h2>
       <!%= article.user.email %>
-      <p class="blog-post-meta"><%= article.created_at.strftime("%d/%m/%Y %H:%M") %> by <a href="#"></a></p>
+      <p class="blog-post-meta"><%= article.created_at.strftime("%d/%m/%Y %H:%M") %> by <a href="#"><%= article.user.email%></a></p>
 
-      <p><%= article.text %></p>
+      <p><%= article.text.truncate(270, separator: '.') %></p>
 
       <p>
-        <%= link_to 'Show', article_path(article), role: "button", class: "btn btn-default" %>
-        <%= link_to 'Edit', edit_article_path(article), role: "button", class: "btn btn-default" %>
-        <%= link_to 'Delete', article_path(article), method: :delete,
-                    data: { confirm: 'Are you sure?' }, role: "button", class: "btn btn-default" %>
+        <%= link_to 'Show post', article_path(article), role: "button", class: "btn btn-default" %>
       </p>
 
     </div><!-- /.blog-post -->

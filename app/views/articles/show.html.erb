@@ -5,16 +5,15 @@
     <div class="blog-post">
       <h2 class="blog-post-title"><%= @article.title %></h2>
 
-
       <p><%= @article.text %></p>
-      <p class="blog-post-meta">Created by <a href="#">User</a> at Date</p>
-
-
+      <p class="blog-post-meta"><a href="#"><%= @article.user.email%></a></p>
+      <p class="blog-post-meta"><%= @article.created_at.strftime("%d/%m/%Y %H:%M") %></p>
     </div><!-- /.blog-post -->
 
     <p>
-      <%= link_to 'Back', articles_path, role: "button", class: "btn btn-default" %>
+      <!--%= link_to 'To all posts', articles_path, role: "button", class: "btn btn-default" %-->
       <%= link_to 'Edit', edit_article_path(@article), role: "button", class: "btn btn-default" %>
+      <%= link_to 'Delete', article_path(@article), method: :delete, role: "button", class: "btn btn-default" %>
     </p>
     <hr>
 
