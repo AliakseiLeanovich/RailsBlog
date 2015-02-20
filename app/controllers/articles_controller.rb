@@ -3,8 +3,10 @@ class ArticlesController < ApplicationController
   before_filter :authenticate_user!
   before_filter :get_user_article, only: [:edit, :update, :destroy]
 
+
+
   def index
-    @articles = Article.all
+    @articles = Article.paginate(:page => params[:page]).order('created_at DESC')
   end
 
   def new
@@ -54,3 +56,5 @@ class ArticlesController < ApplicationController
   end
 
 end
+
+WillPaginate.per_page = 3
