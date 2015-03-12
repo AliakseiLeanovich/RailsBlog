@@ -5,10 +5,17 @@ ru:
   sign_up: "Зарегистрироваться"
   create_post: "Создать запись"
   show_all_posts: "Все записи"
-
   russian_menu: "Русская версия"
   english_menu: "Английская версия"
-
+  log_in: "Войти"
+  email: "Почтовый ящик"
+  password: "Пароль"
+  remember: "Запомнить меня"
+  forgot_password: "Забыли пароль?"
+  send_password: "Выслать инструкцию по восстановлению пароля"
+  show_blog: "Показать блог"
+  hello: "Hello, Rails!"
+  salutation: "Age, quod agis, et respice finem!"
   will_paginate:
     next_label: "Следующая"
     previous_label: "Предыдущая"

@@ -26,10 +26,17 @@ en:
   sign_up: "Sign up"
   create_post: "Create post"
   show_all_posts: "All posts"
-
   russian_menu: "Russian version"
   english_menu: "English version"
-
+  log_in: "Log in"
+  email: "Email"
+  password: "Password"
+  remember: "Remember me"
+  forgot_password: "Forgot your password?"
+  send_password: "Send me reset password instructions"
+  show_blog: "Show blog"
+  hello: "Hello, Rails!"
+  salutation: "Age, quod agis, et respice finem!"
   will_paginate:
     next_label: "Next"
     previous_label: "Previous"
