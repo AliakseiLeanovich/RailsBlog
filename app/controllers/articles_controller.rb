@@ -49,7 +49,7 @@ class ArticlesController < ApplicationController
   def get_user_article
     @article = Article.find(params[:id])
     if current_user != @article.user
-      redirect_to @article, alert: "Due to this article was created by another author you have no permissions to edit it"
+      redirect_to @article, alert: t('post.alert.permissions')
     end
   end
 

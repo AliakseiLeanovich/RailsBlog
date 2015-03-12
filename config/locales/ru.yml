@@ -16,6 +16,35 @@ ru:
   show_blog: "Показать блог"
   hello: "Hello, Rails!"
   salutation: "Age, quod agis, et respice finem!"
+
+  post:
+    alert:
+        permissions: "Запись была создана другим автором. Вы не имеете права её редактировать."
+    error: ", запись не может быть сохранена."
+    label:
+      new: "Новая запись"
+      title: "Введите заголовок"
+      text: "Введите текст"
+      edit: "Редактировать"
+
+    button:
+      show: "Показать"
+      save: "Сохранить"
+      edit: "Редактировать"
+      delete: "Удалить"
+      cancel: "Отмена"
+
+  comment:
+    label:
+      commenter: "Введите своё имя"
+      text: "Введите свой комментарий"
+      title: "Комментарии"
+      add: "Добавить комментарий:"
+      delete_confirmation: "Вы уверены, что хотите удалить этот комментарий?"
+    button:
+      add: "Добавить комментарий"
+      delete: "Удалить комментарий"
+
   will_paginate:
     next_label: "Следующая"
     previous_label: "Предыдущая"

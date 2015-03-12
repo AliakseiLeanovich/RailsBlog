@@ -37,6 +37,35 @@ en:
   show_blog: "Show blog"
   hello: "Hello, Rails!"
   salutation: "Age, quod agis, et respice finem!"
+
+  post:
+    alert:
+      permissions: "Due to this article was created by another author you have no permissions to edit it"
+    error: "prohibited this article from being saved:"
+    label:
+      new: "New post"
+      title: "Enter post title"
+      text: "Enter post text"
+      edit: "Edit post"
+
+    button:
+      show: "Show post"
+      save: "Save"
+      edit: "Edit"
+      delete: "Delete"
+      cancel: "Cancel"
+
+  comment:
+    label:
+      commenter: "Enter your name"
+      text: "Enter your comment"
+      title: "Comments"
+      add: "Add a comment:"
+      delete_confirmation: "Are you sure?"
+    button:
+      add: "Add comment"
+      delete: "Delete comment"
+
   will_paginate:
     next_label: "Next"
     previous_label: "Previous"
