@@ -1,0 +1,14 @@
+ru:
+  hello: "Hello world"
+  sign_in: "Войти"
+  sign_out: "Выйти"
+  sign_up: "Зарегистрироваться"
+  create_post: "Создать запись"
+  show_all_posts: "Все записи"
+
+  russian_menu: "Русская версия"
+  english_menu: "Английская версия"
+
+  will_paginate:
+    next_label: "Следующая"
+    previous_label: "Предыдущая"

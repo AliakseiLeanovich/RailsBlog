@@ -21,3 +21,15 @@
 
 en:
   hello: "Hello world"
+  sign_in: "Sign in"
+  sign_out: "Sign out"
+  sign_up: "Sign up"
+  create_post: "Create post"
+  show_all_posts: "All posts"
+
+  russian_menu: "Russian version"
+  english_menu: "English version"
+
+  will_paginate:
+    next_label: "Next"
+    previous_label: "Previous"
