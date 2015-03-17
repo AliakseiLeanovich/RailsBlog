@@ -1,3 +1,3 @@
 
 ======
-Simple blog from GettingStarted guide http://guides.rubyonrails.org/getting_started.html
+Blog based on GettingStarted guide http://guides.rubyonrails.org/getting_started.html
