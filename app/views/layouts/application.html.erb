@@ -26,7 +26,7 @@
 
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
-                <li><a href="#"><%= current_user.email %></a></li>
+                <li><%= link_to  current_user.email , edit_user_registration_path %></li>
                 <li><%= link_to t(:sign_out), destroy_user_session_path, :method => :delete %></li>
             <% else %>
                 <li><%= link_to t(:sign_in), new_user_session_path %></li>
@@ -56,8 +56,8 @@
           <li class="text-muted">&#169; RedMonkeyProduction 2014</li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li class="btn"><%= link_to t(:russian_menu), root_path(:locale => 'ru') %></li>
-          <li class="btn"><%= link_to t(:english_menu), root_path(:locale => 'en') %></li>
+          <li class="btn"><a href="?locale=ru"><%= t(:russian_menu)%></a></li>
+          <li class="btn"><a href="?locale=en"><%= t(:english_menu)%></a></li>
         </ul>
       </div>
     </footer>

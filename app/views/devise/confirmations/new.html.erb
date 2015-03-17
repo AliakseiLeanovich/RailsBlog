@@ -1,11 +1,11 @@
 <div class="col-md-5 col-md-offset-3">
-  <h2>Resend confirmation instructions</h2>
+  <h2><%= t('devise.confirmations.resend')%></h2>
 
   <%= bootstrap_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: {method: :post}) do |f| %>
       <%= devise_error_messages! %>
 
       <%= f.email_field :email, autofocus: true, hide_label: true, placeholder: t(:email) %>
-      <%= f.submit "Resend confirmation instructions", class: "btn btn-success" %>
+      <%= f.submit t('devise.confirmations.resend'), class: "btn btn-success" %>
   <% end %>
 
   <br/>

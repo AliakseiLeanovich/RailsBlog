@@ -17,6 +17,75 @@ ru:
   hello: "Hello, Rails!"
   salutation: "Age, quod agis, et respice finem!"
 
+  devise:
+    hello: "Здравствуйте, "
+    welcome: "Добро пожаловать, "
+    confirmations:
+      resend: "Выслать инструкцию подтверждения"
+    mailer:
+      confirmation_instructions:
+        confirm_link: "Перейдите по ссылке, чтобы подтвердить свою учётную запись:"
+        confirm_button: "Подтвердить учётную запись"
+      reset_password_instructions:
+        reset_password_text: "Вы можете изменить пароль, пройдя по ссылке ниже:"
+        change_password: "Изменить пароль"
+        ignore_text: "Если Вы не запрашивали изменение пароля, пожалуйста, проигнорируйте это письмо."
+        password_text: "Ваш пароль не изменится пока Вы не пройдёте по ссылке и не введёте новый пароль."
+      unlock_instructions:
+        unlock_account: "Разблокировать учётную запись"
+        unlock_explanation: "Ваша учётная запись была заблокирована из-за превышения предела неправильных попыток авторизации."
+        unlock_link: "Пройдите по ссылке, чтобы разблокировать свою учётную запись:"
+    passwords:
+      edit:
+        change_password: "Изменить пароль"
+        new_password: "Новый пароль"
+        confirm_password: "Подтвердить новый пароль"
+      new:
+        forgot_label: "Забыли пароль?"
+        email_enter: "Введите свой email"
+        send_instructions: "Выслать инструкцию по восстановлению пароля"
+    sessions:
+      new:
+        login: "Вход"
+        email: "Email"
+        password: "Пароль"
+        remember: "Запомнить"
+        enter: "Войти"
+    registrations:
+      edit:
+        edit: "Редактировать"
+        email: "Email"
+        waiting: "Ожидает подтверждения:"
+        new_password: "Пароль (оставьте пустым, если не хотите менять текущий пароль)"
+        new_password_confirmation: "Подтверждение пароля"
+        current_password: "Текущий пароль (необходим для подтверждения изменений)"
+        save_changes: "Сохранить"
+        cancel_account: "Удалить учётную запись"
+        cancel_account2: "Удалить"
+        cancel_text: "Вы можете удалить свою учётную запись, если не хотите использовать этот блог."
+        cancel_confirm: "Вы уверены?"
+        back: "Назад"
+      new:
+        sign_up: "Регистрация"
+        email: "Email"
+        characters: "символов как минимум"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        finish_sign_up: "Зарегистрироваться"
+    shared:
+      links:
+        login: "Войти"
+        sign_up: "Зарегистрироваться"
+        forgot: "Забыли пароль?"
+        confirm: "Не подтверждён почтовый ящик?"
+        unlock: "Не разблокирована учётная запись?"
+        omniauth: "Войти через "
+    unlocks:
+      new:
+        resend: "Отправить инструкцию по разблокировке"
+        email: "Email"
+
+
   post:
     alert:
         permissions: "Запись была создана другим автором. Вы не имеете права её редактировать."

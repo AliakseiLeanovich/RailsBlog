@@ -1,16 +1,11 @@
-<h2>Resend unlock instructions</h2>
+<div class="col-md-5 col-md-offset-3">
+  <h2><%= t('devise.unlocks.new.resend') %></h2>
 
-<%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Resend unlock instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <%= bootstrap_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: {method: :post}) do |f| %>
+      <%= devise_error_messages! %>
+      <%= f.email_field :email, autofocus: true, hide_label: true,
+                        placeholder: t('devise.unlocks.new.email') %>
+      <%= f.submit t('devise.unlocks.new.resend') %>
+  <% end %>
+  <%= render "devise/shared/links" %>
+</div>

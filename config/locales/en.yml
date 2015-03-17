@@ -38,6 +38,75 @@ en:
   hello: "Hello, Rails!"
   salutation: "Age, quod agis, et respice finem!"
 
+  devise:
+    hello: "Hello "
+    welcome: "Welcome "
+    confirmations:
+      resend: "Resend confirmation instructions"
+    mailer:
+      confirmation_instructions:
+        confirm_link: "You can confirm your account email through the link below:"
+        confirm_button: "Confirm my account"
+      reset_password_instructions:
+        reset_password_text: "Someone has requested a link to change your password. You can do this through the link below."
+        change_password: "Change my password"
+        ignore_text: "If you didn't request this, please ignore this email."
+        password_text: "Your password won't change until you access the link above and create a new one."
+      unlock_instructions:
+        unlock_account: "Unlock my account"
+        unlock_explanation: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+        unlock_link: "Click the link below to unlock your account:"
+    passwords:
+      edit:
+        change_password: "Change password"
+        new_password: "New password"
+        confirm_password: "Confirm new password"
+      new:
+        forgot_label: "Forgot your password?"
+        email_enter: "Enter your email"
+        send_instructions: "Send me reset password instructions"
+    sessions:
+      new:
+        login: "Log in"
+        email: "Email"
+        password: "Password"
+        remember: "Remember me"
+        enter: "Log in"
+    registrations:
+      edit:
+        edit: "Edit"
+        email: "Email"
+        waiting: "Currently waiting confirmation for:"
+        new_password: "Password(leave blank if you don't want to change it)"
+        new_password_confirmation: "Password confirmation"
+        current_password: "Current password (we need your password to confirm changes)"
+        save_changes: "Update"
+        cancel_account: "Delete account"
+        cancel_account2: "Delete my account"
+        cancel_text: "You can delete your account in this blog, if you don`t want to use it anymore."
+        cancel_confirm: "Are you sure?"
+        back: "Back"
+      new:
+        sign_up: "Sign up"
+        email: "Email"
+        characters: "characters minimum"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+        finish_sign_up: "Sign up"
+    shared:
+      links:
+        login: "Log in"
+        sign_up: "Sign up"
+        forgot: "Forgot your password?"
+        confirm: "Didn't receive confirmation instructions?"
+        unlock: "Didn't receive unlock instructions?"
+        omniauth: "Sign in with"
+    unlocks:
+      new:
+        resend: "Resend unlock instructions"
+        email: "Email"
+
+
   post:
     alert:
       permissions: "Due to this article was created by another author you have no permissions to edit it"
