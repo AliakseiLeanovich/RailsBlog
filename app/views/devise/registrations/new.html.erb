@@ -7,7 +7,7 @@
       <%= f.email_field :email, autofocus: true, hide_label: true,
                         placeholder: t('devise.registrations.new.email') %>
 
-      <%= f.text_field :nickname, autofocus: true, hide_label: true,
+      <%= f.text_field :nickname, required: true, hide_label: true,
                        placeholder: t('devise.registrations.edit.nickname') %>
 
       <% if @validatable %>
