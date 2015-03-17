@@ -77,6 +77,8 @@ en:
         edit: "Edit"
         email: "Email"
         waiting: "Currently waiting confirmation for:"
+        nickname: "Nickname"
+        location: "Location"
         new_password: "Password(leave blank if you don't want to change it)"
         new_password_confirmation: "Password confirmation"
         current_password: "Current password (we need your password to confirm changes)"

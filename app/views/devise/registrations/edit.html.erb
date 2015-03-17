@@ -18,6 +18,12 @@
                 <div><%= t('devise.registrations.edit.waiting') %> <%= resource.unconfirmed_email %></div>
             <% end %>
 
+            <%= f.text_field :nickname, autofocus: true, hide_label: true,
+                              placeholder: t('devise.registrations.edit.nickname') %>
+
+            <%= f.text_field :location, autofocus: true, hide_label: true,
+                              placeholder: t('devise.registrations.edit.location') %>
+
             <%= f.password_field :password, autocomplete: "off", hide_label: true,
                                  placeholder: t('devise.registrations.edit.new_password') %>
 
