@@ -1,10 +1,15 @@
 class ArticlesController < ApplicationController
 
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_filter :get_user_article, only: [:edit, :update, :destroy]
 
   def index
-    @articles = Article.paginate(:page => params[:page]).order('created_at DESC')
+    if params[:user_id]
+      @articles = Article.where(:user_id => params[:user_id]).
+                          paginate(:page => params[:page]).order('created_at DESC')
+    else
+      @articles = Article.paginate(:page => params[:page]).order('created_at DESC')
+    end
   end
 
   def new
@@ -43,7 +48,7 @@ class ArticlesController < ApplicationController
 
   private
   def article_params
-    params.require(:article).permit(:title, :text)
+    params.require(:article).permit(:title, :text, :user_id)
   end
 
   def get_user_article

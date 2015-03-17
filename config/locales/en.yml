@@ -26,6 +26,8 @@ en:
   sign_up: "Sign up"
   create_post: "Create post"
   show_all_posts: "All posts"
+  edit_profile: "Edit profile"
+  my_posts: "My posts"
   russian_menu: "Russian version"
   english_menu: "English version"
   log_in: "Log in"
@@ -133,6 +135,7 @@ en:
       title: "Comments"
       add: "Add a comment:"
       delete_confirmation: "Are you sure?"
+      delete_permission: "You can't delete this comment."
     button:
       add: "Add comment"
       delete: "Delete comment"

@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-sm-7 blog-main col-md-offset-1">
+  <div class="col-sm-6 blog-main col-md-offset-1 span8">
 
     <% @articles.each do |article| %>
 
@@ -7,7 +7,8 @@
           <h2 class="blog-post-title"><%= article.title %></h2>
           <!%= article.user.email %>
           <p class="blog-post-meta"><%= article.created_at.strftime("%d/%m/%Y %H:%M") %> by
-            <a href="#"><%= article.user.email %></a></p>
+            <%= link_to  article.user.nickname, articles_path(:user_id => article.user.id) %><br/>
+          </p>
 
           <p><%= article.text.truncate(270, separator: '.') %></p>
 
@@ -21,7 +22,9 @@
     <br/>
 
     <%= will_paginate @articles %>
-
   </div>
+
+  <%= render :partial => 'user' %>
+
 </div>
 

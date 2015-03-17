@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, only: :destroy
 
   def create
     @article = Article.find(params[:article_id])
@@ -11,8 +11,12 @@ class CommentsController < ApplicationController
   def destroy
     @article = Article.find(params[:article_id])
     @comment = @article.comments.find(params[:id])
-    @comment.destroy
-    redirect_to article_path(@article)
+    if @article.user == current_user
+      @comment.destroy
+      redirect_to article_path(@article)
+    else
+      redirect_to article_path(@article), alert: t('comment.label.delete_permission')
+    end
   end
 
   private

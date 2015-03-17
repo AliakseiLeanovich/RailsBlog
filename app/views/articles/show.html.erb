@@ -1,19 +1,23 @@
 <div class="row">
   <div class="col-sm-8 blog-main col-md-offset-1">
-
-
     <div class="blog-post">
+
       <h2 class="blog-post-title"><%= @article.title %></h2>
+      <p class="blog-post-meta">
+        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+        <%= link_to  @article.user.nickname, articles_path(:user_id => @article.user.id) %>
+      </p>
+      <p class="blog-post-meta"><%= @article.created_at.strftime("%d/%m/%Y %H:%M") %></p>
 
       <p><%= @article.text %></p>
-      <p class="blog-post-meta"><a href="#"><%= @article.user.email%></a></p>
-      <p class="blog-post-meta"><%= @article.created_at.strftime("%d/%m/%Y %H:%M") %></p>
     </div>
 
+    <% if current_user == @article.user %>
     <p>
       <%= link_to t('post.button.edit'), edit_article_path(@article), role: "button", class: "btn btn-default" %>
       <%= link_to t('post.button.delete'), article_path(@article), method: :delete, role: "button", class: "btn btn-default" %>
     </p>
+    <% end %>
     <hr>
 
   </div>
@@ -24,9 +28,7 @@
 
     <h4><%= t('comment.label.title')%></h4>
     <%= render @article.comments %>
-
     <br>
-
     <h4><%= t('comment.label.add') %></h4>
     <%= render "comments/form" %>
 
