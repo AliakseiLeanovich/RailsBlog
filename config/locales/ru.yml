@@ -1,4 +1,6 @@
 ru:
+  stats: "Статистика"
+  company: "\u00A9 RedMonkeyProduction 2014"
   hello: "Hello world"
   sign_in: "Войти"
   sign_out: "Выйти"

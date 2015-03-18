@@ -51,7 +51,9 @@
     <footer class="footer">
       <div class="container">
         <ul class="nav navbar-nav">
-          <li class="text-muted">&#169; RedMonkeyProduction 2014</li>
+          <li class="text-muted"><%= t(:company)%></li>
+          <li class="btn"><%= link_to t(:stats), stats_articles_path %></li>
+
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li class="btn"><a href="?locale=ru"><%= t(:russian_menu)%></a></li>

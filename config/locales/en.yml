@@ -20,6 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  stats: "Statistics"
+  company: "\u00A9 RedMonkeyProduction 2014"
   hello: "Hello world"
   sign_in: "Sign in"
   sign_out: "Sign out"
