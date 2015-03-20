@@ -1,0 +1,9 @@
+<h3><%=t('search.result')%><em><%= params[:query]%></em></h3>
+<% @search_results.each do |result| %>
+    <h4><%= link_to result.title, result %></h4>
+    <div><%= result.text.truncate(200, separator: " ").html_safe + "..." %></div>
+    <hr>
+<% end %>
+
+<%= link_to t('search.back'), :back, class: "btn btn-default" %>
+

@@ -24,6 +24,15 @@
             <li><%= link_to t(:show_all_posts), articles_path %></li>
           </ul>
 
+          <%= form_tag results_path, method: :get, role: 'search', class:"navbar-form navbar-left" do %>
+              <div class="form-group">
+                <%= text_field_tag :query, params[:query], placeholder: t('search.placeholder'),
+                                   class: "form-control" %>
+              </div>
+              <%= submit_tag t('search.submit'), class:"btn btn-success" %>
+          <% end %>
+
+
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
                 <li><a href="#"><%= current_user.email %></a></li>

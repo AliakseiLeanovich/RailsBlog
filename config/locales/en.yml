@@ -42,6 +42,12 @@ en:
   hello: "Hello, Rails!"
   salutation: "Age, quod agis, et respice finem!"
 
+  search:
+    placeholder: "Search"
+    submit: "Submit"
+    result: "Search results by query "
+    back: "Back"
+
   devise:
     hello: "Hello "
     welcome: "Welcome "

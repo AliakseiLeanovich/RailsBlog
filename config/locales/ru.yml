@@ -21,6 +21,12 @@ ru:
   hello: "Hello, Rails!"
   salutation: "Age, quod agis, et respice finem!"
 
+  search:
+    placeholder: "Поиск"
+    submit: "Искать"
+    result: "Результаты поиска по запросу "
+    back: "Назад"
+
   devise:
     hello: "Здравствуйте, "
     welcome: "Добро пожаловать, "
