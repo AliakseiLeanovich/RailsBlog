@@ -1,6 +1,6 @@
 ru:
   stats: "Статистика"
-  company: "\u00A9 RedMonkeyProduction 2014"
+  company: "\u00A9 GreenMonkeyProduction 2014"
   hello: "Hello world"
   sign_in: "Войти"
   sign_out: "Выйти"
@@ -108,6 +108,11 @@ ru:
       edit: "Редактировать"
       delete: "Удалить"
       cancel: "Отмена"
+    stats:
+      article_creation: "Создание записей"
+      user_registration: "Регистрация новых пользователей"
+      user_contribution: "Записи по авторам"
+      article_commenting: "Комментарии к записям"
 
   comment:
     label:

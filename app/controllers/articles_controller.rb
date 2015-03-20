@@ -47,7 +47,16 @@ class ArticlesController < ApplicationController
   end
 
   def stats
-
+    @stats = Hash.new
+    @stats[:article_count] = Article.group_by_month(:created_at).count
+    @stats[:user_count] = User.group_by_month(:created_at).count
+    @stats[:article_by_user] = Article.group(:user_id).count.map { |key, value|
+      [User.find(key).nickname, value]
+    }
+    @stats[:article_by_comment] = Comment.group(:article_id).count.map { |key, value|
+      article = Article.find(key)
+      ["#{article.title.truncate(15, separator: ' ')}, #{User.find(article.user_id).nickname}", value]
+    }
   end
 
   private

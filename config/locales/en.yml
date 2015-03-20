@@ -21,7 +21,7 @@
 
 en:
   stats: "Statistics"
-  company: "\u00A9 RedMonkeyProduction 2014"
+  company: "\u00A9 GreenMonkeyProduction 2014"
   hello: "Hello world"
   sign_in: "Sign in"
   sign_out: "Sign out"
@@ -122,13 +122,17 @@ en:
       title: "Enter post title"
       text: "Enter post text"
       edit: "Edit post"
-
     button:
       show: "Show post"
       save: "Save"
       edit: "Edit"
       delete: "Delete"
       cancel: "Cancel"
+    stats:
+      article_creation: "Post Creations"
+      user_registration: "User Amount By Month"
+      user_contribution: "User Contributions"
+      article_commenting: "Post Comments"
 
   comment:
     label:

@@ -1,3 +1,17 @@
-<p>
-  Hello, stats will appear here in the nearest future.
-</p>
+<div class="col-xs-8">
+
+  <h3><%= t('post.stats.article_creation')%></h3>
+  <%= line_chart @stats[:article_count], library: {"hAxis" => {"format" => "MM/yy"}} %>
+
+
+  <h3><%= t('post.stats.user_registration')%></h3>
+  <%= line_chart @stats[:user_count], colors: ["red"], library: {"hAxis" => {"format" => "dd/MM/yy"}} %>
+
+  <h3><%= t('post.stats.user_contribution')%></h3>
+  <%= bar_chart @stats[:article_by_user], colors: ["purple"] %>
+
+  <h3><%= t('post.stats.article_commenting')%></h3>
+  <%= column_chart @stats[:article_by_comment], colors: ["green"]  %>
+
+  <p style="height: 100px"></p>
+</div>

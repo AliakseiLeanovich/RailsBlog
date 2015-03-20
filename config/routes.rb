@@ -8,6 +8,5 @@ Rails.application.routes.draw do
     end
   end
 
-  #match 'articles/stats', to: 'articles#stats', via: [:get]
   root 'welcome#index'
 end
