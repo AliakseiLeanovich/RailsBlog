@@ -52,3 +52,5 @@ gem 'active_median', '~> 0.1.0'
 gem 'pg_search'
 
 gem 'acts-as-taggable-on', '~> 3.4'
+
+gem 'rails_12factor', group: :production
