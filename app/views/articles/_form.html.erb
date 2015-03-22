@@ -14,6 +14,7 @@
 
       <%= f.text_field :title, hide_label: true, placeholder: t('post.label.title') %>
       <%= f.text_area :text, hide_label: true, placeholder: t('post.label.text'), rows: 15 %>
+      <%= f.text_field :tag_list, hide_label: true, placeholder: t('post.label.tags') %>
       <%= f.submit t('post.button.save') %>
       <%= link_to t('post.button.cancel'), articles_path, role: "button", class: "btn btn-default" %>
   <% end %>

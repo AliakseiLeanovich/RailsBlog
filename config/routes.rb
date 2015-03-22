@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
 
   get 'results', to: 'results#index', as: 'results'
+  get 'tags/:tag', to: 'articles#index', as: :tag
 
   root 'welcome#index'
 end

@@ -7,6 +7,8 @@ class ArticlesController < ApplicationController
     if params[:user_id]
       @articles = Article.where(:user_id => params[:user_id]).
                           paginate(:page => params[:page]).order('created_at DESC')
+    elsif params[:tag]
+      @articles = Article.tagged_with(params[:tag]).paginate(:page => params[:page]).order('created_at DESC')
     else
       @articles = Article.paginate(:page => params[:page]).order('created_at DESC')
     end
@@ -61,7 +63,7 @@ class ArticlesController < ApplicationController
 
   private
   def article_params
-    params.require(:article).permit(:title, :text, :user_id)
+    params.require(:article).permit(:title, :text, :user_id, :tag_list)
   end
 
   def get_user_article

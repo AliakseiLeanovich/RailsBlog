@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-sm-6 blog-main col-md-offset-1 span8">
+  <div class="col-sm-7 blog-main col-md-offset-1 span8">
 
     <% @articles.each do |article| %>
 
@@ -7,10 +7,17 @@
           <h2 class="blog-post-title"><%= article.title %></h2>
           <!%= article.user.email %>
           <p class="blog-post-meta"><%= article.created_at.strftime("%d/%m/%Y %H:%M") %> by
-            <%= link_to  article.user.nickname, articles_path(:user_id => article.user.id) %><br/>
+            <%= link_to article.user.nickname, articles_path(:user_id => article.user.id) %><br/>
           </p>
 
           <p><%= article.text.truncate(270, separator: '.') %></p>
+
+          <% if !article.tag_list.empty? %>
+              <p>
+                <%= t('post.label.tags2') %>
+                <%= tag_buttons(article.tag_list) %>
+              </p>
+          <% end %>
 
           <p>
             <%= link_to t('post.button.show'), article_path(article), role: "button", class: "btn btn-default" %>
@@ -24,7 +31,18 @@
     <%= will_paginate @articles %>
   </div>
 
-  <%= render :partial => 'user' %>
+  <div class="col-sm-3 col-md-offset-1 span3">
+    <%= render :partial => 'user' %>
+
+    <div class="panel panel-default">
+      <div class="panel-heading"><%= t('tag_cloud') %></div>
+      <div id="tag_cloud">
+        <% tag_cloud Article.tag_counts, %w{s m l} do |tag, css_class| %>
+            <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 
 </div>
 

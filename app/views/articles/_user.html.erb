@@ -1,34 +1,33 @@
-<div class="col-sm-3 col-md-offset-1 span3">
-  <% if user_signed_in? %>
-      <div class="panel panel-default">
-        <ul class="list-group">
-          <li class="list-group-item">
+<% if user_signed_in? %>
+    <div class="panel panel-default">
+      <ul class="list-group">
+        <li class="list-group-item">
 
-            <% if current_user.nickname %>
-                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                <%= current_user.nickname %>
-                <br/>
-            <% end %>
+          <% if current_user.nickname %>
+              <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+              <%= current_user.nickname %>
+              <br/>
+          <% end %>
 
-            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-            <%= current_user.email %>
-            <br/>
+          <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+          <%= current_user.email %>
+          <br/>
 
-            <% if current_user.location %>
-                <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-                <%= current_user.location %>
-                <br/>
-            <% end %>
+          <% if current_user.location %>
+              <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+              <%= current_user.location %>
+              <br/>
+          <% end %>
 
-          </li>
-          <li class="list-group-item">
-            <%= link_to t(:create_post), new_article_path %>
-            <br/>
-            <%= link_to t(:my_posts), articles_path(:user_id => current_user.id) %><br/>
-            <%= link_to t(:edit_profile), edit_user_registration_path %>
-          </li>
-        </ul>
+        </li>
+        <li class="list-group-item">
+          <%= link_to t(:create_post), new_article_path %>
+          <br/>
+          <%= link_to t(:my_posts), articles_path(:user_id => current_user.id) %>
+          <br/>
+          <%= link_to t(:edit_profile), edit_user_registration_path %>
+        </li>
+      </ul>
 
-      </div>
-  <% end %>
-</div>
+    </div>
+<% end %>

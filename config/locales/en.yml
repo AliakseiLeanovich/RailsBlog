@@ -127,7 +127,9 @@ en:
       new: "New post"
       title: "Enter post title"
       text: "Enter post text"
-      edit: "Edit post"
+      edit: "Post changes"
+      tags: "Tags (separated by commas)"
+      tags2: "Tags: "
     button:
       show: "Show post"
       save: "Save"
@@ -155,3 +157,4 @@ en:
   will_paginate:
     next_label: "Next"
     previous_label: "Previous"
+  tag_cloud: "Tag cloud"
