@@ -17,6 +17,6 @@
 
 # Ignore idea and secret files
 .idea
-/config/database.yml
-/config/secrets.yml
+#/config/database.yml
+#/config/secrets.yml
 
