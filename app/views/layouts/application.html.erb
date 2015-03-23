@@ -27,7 +27,7 @@
           <%= form_tag results_path, method: :get, role: 'search', class:"navbar-form navbar-left" do %>
               <div class="form-group">
                 <%= text_field_tag :query, params[:query], placeholder: t('search.placeholder'),
-                                   class: "form-control" %>
+                                   class: "form-control", style: "height: inherit;" %>
               </div>
               <%= submit_tag t('search.submit'), class:"btn btn-success" %>
           <% end %>
