@@ -1,0 +1,28 @@
+<div class="col-md-7 col-md-offset-2">
+
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h2 class="panel-title"><%= t('devise.registrations.edit.edit') %></h2>
+    </div>
+    <div class="panel-body">
+      <div style="margin-right: 25px">
+
+        <%= bootstrap_form_for @user do |f| %>
+
+            <%= f.email_field :email, autofocus: true, hide_label: true,
+                              placeholder: t('devise.registrations.edit.email') %>
+
+            <%= f.text_field :nickname, autofocus: true, hide_label: true,
+                              placeholder: t('devise.registrations.edit.nickname') %>
+
+            <%= f.text_field :location, autofocus: true, hide_label: true,
+                              placeholder: t('devise.registrations.edit.location') %>
+
+            <%= f.submit t('devise.registrations.edit.save_changes'), class: "btn btn-success" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <%= link_to t('devise.registrations.edit.back'), :back, class: "btn btn-default" %>
+</div>

@@ -158,3 +158,11 @@ en:
     next_label: "Next"
     previous_label: "Previous"
   tag_cloud: "Tag cloud"
+
+  user:
+    link: "Users"
+    delete_own: "You can't delete your account this way"
+    edit: "Edit"
+    cancel_account: "Delete account"
+    cancel_confirm: "Are you sure?"
+    no_permission: "You have no permission to do edit or delete users"

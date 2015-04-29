@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   get 'tags/:tag', to: 'articles#index', as: :tag
 
   root 'welcome#index'
+
+  resources :users
 end

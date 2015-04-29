@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-sm-7 blog-main col-md-offset-1 span8">
+
+    <% @users.each do |user| %>
+        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+        <%= user.nickname %>
+        <br/>
+
+        <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+        <%= user.email %>
+        <br/>
+
+        <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+        <%= user.location %>
+        <br/>
+
+        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+        <%= user.created_at.strftime("%d/%m/%Y %H:%M")  %>
+        <br/>
+
+        <% if current_user && current_user.admin? %>
+        <%= link_to t('user.edit'), edit_user_path(user), :class => 'btn btn-default' %>
+        <% if current_user != user %>
+        <%= link_to t('user.cancel_account'), user_path(user),
+                    :method => 'delete',
+                    :data => { :confirm => t('user.cancel_confirm') },
+                    :class => 'btn btn-default' %>
+        <% end %>
+        <% end %>
+        <br/>
+        <hr>
+
+    <% end %>
+
+  </div>
+</div>
