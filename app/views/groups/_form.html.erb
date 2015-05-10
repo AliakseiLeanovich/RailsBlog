@@ -1,0 +1,27 @@
+<%= bootstrap_form_for @group do |f| %>
+
+    <% if @group.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @group.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <%= f.text_field :title %>
+  <%= f.text_field :description %>
+  <%= f.label 'Users' %>
+  <%= f.select :user_ids, User.all.map{|u|[u.nickname, u.id]}, { hide_label: true }, { :multiple => true } %>
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            groups_path, :class => 'btn btn-default' %>
+
+<% end %>

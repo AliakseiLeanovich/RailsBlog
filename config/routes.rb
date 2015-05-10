@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :roles
+
   get 'results/index'
 
   devise_for :users
@@ -16,4 +18,5 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :users
+  resources :groups
 end

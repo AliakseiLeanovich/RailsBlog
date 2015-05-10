@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150429091404) do
+ActiveRecord::Schema.define(version: 20150510222416) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,40 @@ ActiveRecord::Schema.define(version: 20150429091404) do
   end
 
   add_index "comments", ["article_id"], name: "index_comments_on_article_id", using: :btree
+
+  create_table "groups", force: true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "groups_users", id: false, force: true do |t|
+    t.integer "group_id"
+    t.integer "user_id"
+  end
+
+  add_index "groups_users", ["group_id"], name: "index_groups_users_on_group_id", using: :btree
+  add_index "groups_users", ["user_id"], name: "index_groups_users_on_user_id", using: :btree
+
+  create_table "roles", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.boolean  "create_ability"
+    t.boolean  "read_ability"
+    t.boolean  "update_ability"
+    t.boolean  "delete_ability"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles_users", id: false, force: true do |t|
+    t.integer "role_id"
+    t.integer "user_id"
+  end
+
+  add_index "roles_users", ["role_id"], name: "index_roles_users_on_role_id", using: :btree
+  add_index "roles_users", ["user_id"], name: "index_roles_users_on_user_id", using: :btree
 
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"

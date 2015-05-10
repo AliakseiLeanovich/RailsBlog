@@ -166,3 +166,9 @@ en:
     cancel_account: "Delete account"
     cancel_confirm: "Are you sure?"
     no_permission: "You have no permission to do edit or delete users"
+
+  group:
+    link: "User groups"
+    
+  role:
+    link: "User roles"

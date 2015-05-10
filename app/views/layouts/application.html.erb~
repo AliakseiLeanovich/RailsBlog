@@ -65,7 +65,7 @@
           <li class="btn"><%= link_to t(:stats), stats_articles_path %></li>
           <li class="btn"><%= link_to t('user.link'), users_path %></li>
           <li class="btn"><%= link_to t('group.link'), groups_path %></li>
-          <li class="btn"><%= link_to t('role.link'), roles_path %></li>
+          <li class="btn"><%= link_to 'Roles', roles_path %></li>
 
         </ul>
         <ul class="nav navbar-nav navbar-right">

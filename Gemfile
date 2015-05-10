@@ -38,7 +38,6 @@ gem 'capistrano-rails', group: :development
 # Use debugger
 gem 'debugger', group: [:development, :test]
 
-#bootstrap
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'
 gem 'bootstrap_form'
@@ -54,3 +53,8 @@ gem 'pg_search'
 gem 'acts-as-taggable-on', '~> 3.4'
 
 gem 'rails_12factor', group: :production
+
+#gem 'less-rails'
+#gem 'twitter-bootstrap-rails'
+
+gem 'bootstrap-generators', '~> 3.3.1'
