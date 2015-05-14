@@ -1,25 +1,34 @@
 class ArticlesController < ApplicationController
 
-  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  before_filter :get_user_article, only: [:edit, :update, :destroy]
+  before_filter :authenticate_user!
+  before_filter :get_user_article, only: [:show, :edit, :update, :destroy]
 
   def index
+    redirect_to root_path, alert: t('post.alert.no_role_permission') if !current_user.permissions[:read]
+    user_articles = Article.where(id: current_user.article_ids)
     if params[:user_id]
-      @articles = Article.where(:user_id => params[:user_id]).
-                          paginate(:page => params[:page]).order('created_at DESC')
+      @articles = user_articles.where(:user_id => params[:user_id])
     elsif params[:tag]
-      @articles = Article.tagged_with(params[:tag]).paginate(:page => params[:page]).order('created_at DESC')
+      @articles = user_articles.tagged_with(params[:tag])
     else
-      @articles = Article.paginate(:page => params[:page]).order('created_at DESC')
+      @articles = user_articles
     end
+    if @articles.empty? || @articles.nil?
+      redirect_to root_path, alert: t('post.alert.no_group_permission')
+    end
+    @articles = @articles.paginate(:page => params[:page]).order('created_at DESC')
+
   end
 
   def new
+    redirect_to root_path, alert: t('post.alert.no_role_permission') if !current_user.permissions[:create]
     @article = Article.new
   end
 
   def create
+    redirect_to root_path, alert: t('post.alert.no_role_permission') if !current_user.permissions[:create]
     @article = current_user.articles.new(article_params)
+    @article.groups = current_user.groups
 
     if @article.save
       redirect_to @article
@@ -29,13 +38,15 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
+    redirect_to root_path, alert: t('post.alert.no_role_permission') if !current_user.permissions[:read]
   end
 
   def edit
+    redirect_to root_path, alert: t('post.alert.no_role_permission') if !current_user.permissions[:update]
   end
 
   def update
+    redirect_to root_path, alert: t('post.alert.no_role_permission') if !current_user.permissions[:update]
     if @article.update(article_params)
       redirect_to @article
     else
@@ -44,8 +55,13 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article.destroy
-    redirect_to articles_path
+    if current_user.permissions[:delete]
+      @article.destroy
+      @article.groups.clear
+      redirect_to articles_path
+    else
+      redirect_to root_path, alert: t('post.alert.no_role_permission')
+    end
   end
 
   def stats
@@ -68,6 +84,9 @@ class ArticlesController < ApplicationController
 
   def get_user_article
     @article = Article.find(params[:id])
+    if @article.nil? || (current_user.groups&@article.groups).nil?
+      redirect_to root_path, alert: t('post.alert.no_group_permission')
+    end
     if current_user != @article.user
       redirect_to @article, alert: t('post.alert.permissions')
     end
@@ -75,4 +94,4 @@ class ArticlesController < ApplicationController
 
 end
 
-WillPaginate.per_page = 3
+WillPaginate.per_page = 5

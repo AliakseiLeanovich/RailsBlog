@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_action :check_permissions
   before_action :set_group, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
@@ -37,6 +38,12 @@ class GroupsController < ApplicationController
   end
 
   private
+    def check_permissions
+      if current_user == nil || !current_user.admin?
+        redirect_to root_path, alert: t('group.no_permission')
+      end
+    end
+
     def set_group
       @group = Group.find(params[:id])
     end

@@ -35,7 +35,7 @@ class UsersController < ApplicationController
   end
 
   def check_permissions
-    if current_user && !current_user.admin?
+    if current_user == nil || !current_user.admin?
       redirect_to users_path, alert: t('user.no_permission')
     end
   end

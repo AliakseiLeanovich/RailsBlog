@@ -1,26 +1,26 @@
 <div class="page-header">
   <%= link_to roles_path, class: 'btn btn-default' do %>
     <span class="glyphicon glyphicon-list-alt"></span>
-    Back
+      <%= t('role.back') %>
   <% end %>
   <%= link_to edit_role_path(@role), class: 'btn btn-primary' do %>
     <span class="glyphicon glyphicon-pencil"></span>
-    Edit
+      <%= t('role.edit') %>
   <% end %>
-  <h1>Show role</h1>
+  <h1><%= t('role.label') %></h1>
 </div>
 
 <dl class="dl-horizontal">
-  <dt>Title:</dt>
+  <dt><%= t('role.title') %>:</dt>
   <dd><%= @role.title %></dd>
 
-  <dt>Description:</dt>
+  <dt><%= t('role.description') %>:</dt>
   <dd><%= @role.description %></dd>
   
-  <dt>Users:</dt>
+  <dt><%= t('role.users') %>:</dt>
   <dd><%= @role.users.map{|user| user.nickname}.join(', ').html_safe %></dd>
 
-  <dt>Create ability:</dt>
+  <dt><%= t('role.create_ability') %>:</dt>
   <dd>
   <% if @role.create_ability %>
   <span class="glyphicon glyphicon-plus"></span>          
@@ -29,7 +29,7 @@
   <% end %>
   </dd>
 
-  <dt>Read ability:</dt>
+  <dt><%= t('role.read_ability') %>:</dt>
   <dd>
   <% if @role.read_ability %>
   <span class="glyphicon glyphicon-plus"></span>          
@@ -38,7 +38,7 @@
   <% end %>
   </dd>
 
-  <dt>Update ability:</dt>
+  <dt><%= t('role.update_ability') %>:</dt>
   <dd>
   <% if @role.update_ability %>
   <span class="glyphicon glyphicon-plus"></span>          
@@ -47,7 +47,7 @@
   <% end %>
   </dd>
 
-  <dt>Delete ability:</dt>
+  <dt><%= t('role.delete_ability') %>:</dt>
   <dd>
   <% if @role.delete_ability %>
   <span class="glyphicon glyphicon-plus"></span>          

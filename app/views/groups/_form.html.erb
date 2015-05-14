@@ -3,7 +3,7 @@
     <% if @group.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
       <div class="panel-heading">
-        <h3 class="panel-title"><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h3>
+        <h3 class="panel-title"><%= pluralize(@group.errors.count, "error") %></h3>
       </div>
       <div class="panel-body">
         <ul>
@@ -15,13 +15,14 @@
     </div>
   <% end %>
 
-  <%= f.text_field :title %>
-  <%= f.text_field :description %>
-  <%= f.label 'Users' %>
+  <%= f.label t('group.title') %>
+  <%= f.text_field :title, hide_label: true %>
+  <%= f.label t('group.description') %>
+  <%= f.text_field :description, hide_label: true %>
+  <%= f.label t('group.users') %>
   <%= f.select :user_ids, User.all.map{|u|[u.nickname, u.id]}, { hide_label: true }, { :multiple => true } %>
 
-  <%= f.submit nil, :class => 'btn btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-            groups_path, :class => 'btn btn-default' %>
+  <%= f.submit t('group.save'), :class => 'btn btn-primary' %>
+  <%= link_to t('group.cancel'), groups_path, :class => 'btn btn-default' %>
 
 <% end %>

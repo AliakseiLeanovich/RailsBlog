@@ -1,13 +1,13 @@
 <div class="page-header">
   <%= link_to roles_path, class: 'btn btn-default' do %>
     <span class="glyphicon glyphicon-list-alt"></span>
-    Back
+      <%= t('role.back') %>
   <% end %>
   <%= link_to @role, class: 'btn btn-primary' do %>
     <span class="glyphicon glyphicon-info-sign"></span>
-    Show
+      <%= t('role.show') %>
   <% end %>
-  <h1>Editing role</h1>
+  <h1><%= t('role.edit') %></h1>
 </div>
 
 <%= render 'form' %>

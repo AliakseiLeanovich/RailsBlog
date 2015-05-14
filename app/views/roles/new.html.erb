@@ -1,9 +1,9 @@
 <div class="page-header">
   <%= link_to roles_path, class: 'btn btn-default' do %>
     <span class="glyphicon glyphicon-list-alt"></span>
-    Back
+      <%= t('role.back') %>
   <% end %>
-  <h1>New role</h1>
+  <h1><%= t('role.new') %></h1>
 </div>
 
 <%= render 'form' %>
