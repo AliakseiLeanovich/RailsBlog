@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 
   before_filter :authenticate_user!
-  before_filter :get_user_article, only: [:show, :edit, :update, :destroy]
+  before_filter :get_user_article, only: [:edit, :update, :destroy]
 
   def index
     redirect_to root_path, alert: t('post.alert.no_role_permission') if !current_user.permissions[:read]
@@ -38,7 +38,13 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    redirect_to root_path, alert: t('post.alert.no_role_permission') if !current_user.permissions[:read]
+    @article = Article.find(params[:id])
+    if @article.nil? || (current_user.groups&@article.groups).nil?
+      redirect_to root_path, alert: t('post.alert.no_group_permission')
+    end
+    if !current_user.permissions[:read]
+      redirect_to root_path, alert: t('post.alert.no_role_permission')
+    end
   end
 
   def edit
