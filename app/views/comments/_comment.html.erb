@@ -1,14 +1,14 @@
 <div class="row">
-  <div class="col-sm-8 span6">
-    <i><%= comment.commenter %></i><br/>
+
+  <div class="col-sm-6">
+    <a href="#"><%= comment.commenter %></a><br>
     <%= comment.body %>
   </div>
-  <% if current_user == @article.user %>
-  <div class="span1">
-  <%= link_to t('comment.button.delete'), [comment.article, comment],
-              method: :delete, data: { confirm:  t('comment.label.delete_confirmation') },
-              role: "button", class: "btn btn-xs btn-default" %>
+
+  <div>
+  <%= link_to 'Delete comment', [comment.article, comment],
+              method: :delete,
+              data: { confirm: 'Are you sure?' }, role: "button", class: "btn btn-xs btn-default" %>
   </div>
-  <% end %>
+  <br>
 </div>
-<br/>

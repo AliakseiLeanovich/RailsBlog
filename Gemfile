@@ -3,8 +3,8 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
-# Use pqstgresql as the database for Active Record
-gem 'pg'
+# Use sqlite3 as the database for Active Record
+gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -38,27 +38,9 @@ gem 'capistrano-rails', group: :development
 # Use debugger
 gem 'debugger', group: [:development, :test]
 
+#bootstrap
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'
+
+#bootstrap forms
 gem 'bootstrap_form'
-gem 'devise'
-gem 'will_paginate', '~> 3.0.6'
-
-gem 'chartkick', '~> 1.2.4'
-gem 'groupdate', '~> 2.1.1'
-gem 'active_median', '~> 0.1.0'
-
-gem 'pg_search'
-
-gem 'acts-as-taggable-on', '~> 3.4'
-
-gem 'rails_12factor', group: :production
-
-#gem 'less-rails'
-#gem 'twitter-bootstrap-rails'
-
-gem 'bootstrap-generators', '~> 3.3.1'
-
-group :development do
-  gem "rails-erd"
-end
