@@ -1,59 +1,39 @@
-<div class="col-md-7 col-md-offset-2">
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-  <div class="panel panel-success">
-    <div class="panel-heading">
-      <h2 class="panel-title"><%= t('devise.registrations.edit.edit') %></h2>
-    </div>
-    <div class="panel-body">
-      <div style="margin-right: 25px">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
 
-        <%= bootstrap_form_for(resource, as: resource_name,
-                               url: registration_path(resource_name), html: {method: :put}) do |f| %>
-            <%= devise_error_messages! %>
-
-            <%= f.email_field :email, autofocus: true, hide_label: true,
-                              placeholder: t('devise.registrations.edit.email') %>
-
-            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-                <div><%= t('devise.registrations.edit.waiting') %> <%= resource.unconfirmed_email %></div>
-            <% end %>
-
-            <%= f.text_field :nickname, autofocus: true, hide_label: true,
-                              placeholder: t('devise.registrations.edit.nickname') %>
-
-            <%= f.text_field :location, autofocus: true, hide_label: true,
-                              placeholder: t('devise.registrations.edit.location') %>
-
-            <%= f.password_field :password, autocomplete: "off", hide_label: true,
-                                 placeholder: t('devise.registrations.edit.new_password') %>
-
-            <%= f.password_field :password_confirmation, autocomplete: "off", hide_label: true,
-                                 placeholder: t('devise.registrations.edit.new_password_confirmation') %>
-
-            <%= f.password_field :current_password, autocomplete: "off", hide_label: true,
-                                 placeholder: t('devise.registrations.edit.current_password') %>
-
-            <%= f.submit t('devise.registrations.edit.save_changes'), class: "btn btn-success" %>
-        <% end %>
-      </div>
-    </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
   </div>
 
-  <div class="panel panel-danger">
-    <div class="panel-heading">
-      <h2 class="panel-title">
-        <%= t('devise.registrations.edit.cancel_account') %>
-      </h2>
-    </div>
-    <div class="panel-body">
-      <%= t('devise.registrations.edit.cancel_text') %>
-      <br/>
-      <br/>
-      <%= button_to t('devise.registrations.edit.cancel_account2'), registration_path(resource_name),
-                    data: {confirm: t('devise.registrations.edit.cancel_confirm')},
-                    method: :delete, class: "btn btn-danger" %>
-    </div>
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
-  <%= link_to t('devise.registrations.edit.back'), :back, class: "btn btn-default" %>
-</div>
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
+
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+<%= link_to "Back", :back %>

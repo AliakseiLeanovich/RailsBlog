@@ -1,7 +1,7 @@
 <%= bootstrap_form_for([@article, @article.comments.build]) do |f| %>
 
-    <%= f.text_field :commenter, hide_label: true, placeholder: t('comment.label.commenter') %>
-    <%= f.text_area :body, hide_label: true, placeholder: t('comment.label.text') %>
-    <%= f.submit t('comment.button.add')%>
+    <%= f.text_field :commenter, hide_label: true, placeholder: "Enter your name" %>
+    <%= f.text_area :body, hide_label: true, placeholder: "Enter your comment" %>
+    <%= f.submit "Add comment"%>
 
 <% end %>

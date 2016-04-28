@@ -3,7 +3,8 @@
 
       <% if @article.errors.any? %>
           <div id="error_explanation">
-            <h2><%= pluralize(@article.errors.count, "error"); t('post.error') %></h2>
+            <h2><%= pluralize(@article.errors.count, "error") %> prohibited
+              this article from being saved:</h2>
             <ul>
               <% @article.errors.full_messages.each do |msg| %>
                   <li><%= msg %></li>
@@ -12,9 +13,8 @@
           </div>
       <% end %>
 
-      <%= f.text_field :title, hide_label: true, placeholder: t('post.label.title') %>
-      <%= f.text_area :text, hide_label: true, placeholder: t('post.label.text'), rows: 15 %>
-      <%= f.text_field :tag_list, hide_label: true, placeholder: t('post.label.tags') %>
-      <%= f.submit t('post.button.save') %>
-      <%= link_to t('post.button.cancel'), articles_path, role: "button", class: "btn btn-default" %>
+      <%= f.text_field :title, hide_label: true, placeholder: "Enter post title" %>
+      <%= f.text_area :text, hide_label: true, placeholder: "Enter post text", rows: 15 %>
+      <%= f.submit "Save" %>
+      <%= link_to 'Cancel', articles_path, role: "button", class: "btn btn-default" %>
   <% end %>
