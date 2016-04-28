@@ -6,9 +6,9 @@
   </div>
 
   <div>
-  <%= link_to 'Delete comment', [comment.article, comment],
+  <%= link_to t('comment.button.delete'), [comment.article, comment],
               method: :delete,
-              data: { confirm: 'Are you sure?' }, role: "button", class: "btn btn-xs btn-default" %>
+              data: { confirm:  t('comment.label.delete_confirmation') }, role: "button", class: "btn btn-xs btn-default" %>
   </div>
   <br>
 </div>

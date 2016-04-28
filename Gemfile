@@ -41,8 +41,6 @@ gem 'debugger', group: [:development, :test]
 #bootstrap
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'
-
-#bootstrap forms
 gem 'bootstrap_form'
-
 gem 'devise'
+gem 'will_paginate', '~> 3.0.6'

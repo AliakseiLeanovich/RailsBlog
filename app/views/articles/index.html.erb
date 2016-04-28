@@ -12,14 +12,15 @@
           <p><%= article.text.truncate(270, separator: '.') %></p>
 
           <p>
-            <%= link_to 'Show post', article_path(article), role: "button", class: "btn btn-default" %>
+            <%= link_to t('post.button.show'), article_path(article), role: "button", class: "btn btn-default" %>
           </p>
-
         </div>
-
         <hr>
 
     <% end %>
+    <br/>
+
+    <%= will_paginate @articles %>
 
   </div>
 </div>

@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-sm-8 blog-main">
+  <div class="col-sm-8 blog-main col-md-offset-1">
 
 
     <div class="blog-post">
@@ -8,12 +8,11 @@
       <p><%= @article.text %></p>
       <p class="blog-post-meta"><a href="#"><%= @article.user.email%></a></p>
       <p class="blog-post-meta"><%= @article.created_at.strftime("%d/%m/%Y %H:%M") %></p>
-    </div><!-- /.blog-post -->
+    </div>
 
     <p>
-      <!--%= link_to 'To all posts', articles_path, role: "button", class: "btn btn-default" %-->
-      <%= link_to 'Edit', edit_article_path(@article), role: "button", class: "btn btn-default" %>
-      <%= link_to 'Delete', article_path(@article), method: :delete, role: "button", class: "btn btn-default" %>
+      <%= link_to t('post.button.edit'), edit_article_path(@article), role: "button", class: "btn btn-default" %>
+      <%= link_to t('post.button.delete'), article_path(@article), method: :delete, role: "button", class: "btn btn-default" %>
     </p>
     <hr>
 
@@ -21,14 +20,14 @@
 </div>
 
 <div class="row">
-  <div class="col-sm-6">
+  <div class="col-sm-6 col-md-offset-1">
 
-    <h4>Comments</h4>
+    <h4><%= t('comment.label.title')%></h4>
     <%= render @article.comments %>
 
     <br>
 
-    <h4>Add a comment:</h4>
+    <h4><%= t('comment.label.add') %></h4>
     <%= render "comments/form" %>
 
   </div>

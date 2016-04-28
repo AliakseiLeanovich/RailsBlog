@@ -20,17 +20,17 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to 'All posts', articles_path %></li>
-            <li><%= link_to 'Create post', new_article_path %></li>
+            <li><%= link_to t(:show_all_posts), articles_path %></li>
+            <li><%= link_to t(:create_post), new_article_path %></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
-                <li><a href="#"><%= current_user.email %></a></li>
-                <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+                <li><%= link_to  current_user.email , edit_user_registration_path %></li>
+                <li><%= link_to t(:sign_out), destroy_user_session_path, :method => :delete %></li>
             <% else %>
-                <li><%= link_to 'Sign in', new_user_session_path %></li>
-                <li><%= link_to 'Sign up', new_user_registration_path %></li>
+                <li><%= link_to t(:sign_in), new_user_session_path %></li>
+                <li><%= link_to t(:sign_up), new_user_registration_path %></li>
             <% end %>
 
           </ul>
@@ -52,7 +52,13 @@
 
     <footer class="footer">
       <div class="container">
-        <p class="text-muted">&#169; RedMonkeyProduction 2014</p>
+        <ul class="nav navbar-nav">
+          <li class="text-muted">&#169; RedMonkeyProduction 2014</li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="btn"><a href="?locale=ru"><%= t(:russian_menu)%></a></li>
+          <li class="btn"><a href="?locale=en"><%= t(:english_menu)%></a></li>
+        </ul>
       </div>
     </footer>
 

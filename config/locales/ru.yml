@@ -1,13 +1,10 @@
 ru:
-  stats: "Статистика"
-  company: "\u00A9 GreenMonkeyProduction 2014"
+  hello: "Hello world"
   sign_in: "Войти"
   sign_out: "Выйти"
   sign_up: "Зарегистрироваться"
   create_post: "Создать запись"
   show_all_posts: "Все записи"
-  edit_profile: "Редактировать профиль"
-  my_posts: "Мои записи"
   russian_menu: "Русская версия"
   english_menu: "Английская версия"
   log_in: "Войти"
@@ -17,14 +14,8 @@ ru:
   forgot_password: "Забыли пароль?"
   send_password: "Выслать инструкцию по восстановлению пароля"
   show_blog: "Показать блог"
-  hello: "Приветствуем!"
-  salutation: "Зарегистрируйтесь и свяжитесь с администратором, чтобы получить доступ ко всем возможностям нашего сайта!"
-
-  search:
-    placeholder: "Поиск"
-    submit: "Искать"
-    result: "Результаты поиска по запросу "
-    back: "Назад"
+  hello: "Hello, Rails!"
+  salutation: "Age, quod agis, et respice finem!"
 
   devise:
     hello: "Здравствуйте, "
@@ -65,8 +56,6 @@ ru:
         edit: "Редактировать"
         email: "Email"
         waiting: "Ожидает подтверждения:"
-        nickname: "Никнейм"
-        location: "Местоположение"
         new_password: "Пароль (оставьте пустым, если не хотите менять текущий пароль)"
         new_password_confirmation: "Подтверждение пароля"
         current_password: "Текущий пароль (необходим для подтверждения изменений)"
@@ -100,27 +89,19 @@ ru:
   post:
     alert:
         permissions: "Запись была создана другим автором. Вы не имеете права её редактировать."
-        no_group_permission: "Такой записи не существует или Вы не имеете прав группы на её просмотр"
-        no_role_permission: "Такой записи не существует или Вы не имеете ролевых прав на её использование"
     error: ", запись не может быть сохранена."
     label:
       new: "Новая запись"
       title: "Введите заголовок"
       text: "Введите текст"
-      edit: "Изменение записи"
-      tags: "Теги (разделённые запятыми)"
-      tags2: "Теги: "
+      edit: "Редактировать"
+
     button:
-      show: "Показать полностью"
+      show: "Показать"
       save: "Сохранить"
       edit: "Редактировать"
       delete: "Удалить"
       cancel: "Отмена"
-    stats:
-      article_creation: "Создание записей"
-      user_registration: "Регистрация новых пользователей"
-      user_contribution: "Записи по авторам"
-      article_commenting: "Комментарии к записям"
 
   comment:
     label:
@@ -129,7 +110,6 @@ ru:
       title: "Комментарии"
       add: "Добавить комментарий:"
       delete_confirmation: "Вы уверены, что хотите удалить этот комментарий?"
-      delete_permission: "Вы не можете удалить данный комментарий."
     button:
       add: "Добавить комментарий"
       delete: "Удалить комментарий"
@@ -137,53 +117,3 @@ ru:
   will_paginate:
     next_label: "Следующая"
     previous_label: "Предыдущая"
-  tag_cloud: "Облако тегов"
-
-  user:
-    link: "Пользователи"
-    delete_own: "Удалить собственный аккаунт на данной странице нельзя"
-    edit: "Редактировать"
-    cancel_account: "Удалить"
-    cancel_confirm: "Уверены?"
-    no_permission: "Вы не имеете достаточных прав для редактирования и удаления пользователей"
-
-  group:
-    label: "Просмотр группы"
-    groups: "Список групп"
-    link: "Группы пользователей"
-    no_permission: "Вы не имеете достаточных прав для просмотра выбранной страницы"
-    new: "Новая группа"
-    edit: "Редактировать"
-    delete: "Удалить"
-    confirm: "Вы уверены?"
-    title: "Название"
-    description: "Описание"
-    created_at: "Дата создания"
-    users: "Пользователи"
-    actions: "Действия"
-    back: "Назад"
-    cancel: "Отмена"
-    save: "Сохранить"
-    
-  role:
-    label: "Роль"
-    roles: "Список ролей"
-    link: "Роли пользователей"
-    no_permission: "У Вас нет прав доступа к этой странице"
-    new: "Новая роль"
-    edit: "Редактировать"
-    delete: "Удалить"
-    confirm: "Вы уверены?"
-    title: "Название"
-    description: "Описание"
-    created_at: "Дата создания"
-    users: "Пользователи"
-    actions: "Действия"
-    back: "Назад"
-    cancel: "Отмена"
-    save: "Сохранить"
-    create_ability: "Право создания"
-    read_ability: "Право просмотра"
-    update_ability: "Право редактирования"
-    delete_ability: "Право удаления"
-    show_role: "Показать роль"

@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   before_filter :get_user_article, only: [:edit, :update, :destroy]
 
   def index
-    @articles = Article.all
+    @articles = Article.paginate(:page => params[:page]).order('created_at DESC')
   end
 
   def new
@@ -49,8 +49,10 @@ class ArticlesController < ApplicationController
   def get_user_article
     @article = Article.find(params[:id])
     if current_user != @article.user
-      redirect_to @article, alert: "Due to this article was created by another author you have no permissions to edit it"
+      redirect_to @article, alert: t('post.alert.permissions')
     end
   end
 
 end
+
+WillPaginate.per_page = 3
