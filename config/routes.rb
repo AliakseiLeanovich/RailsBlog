@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get 'results/index'
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: "users/registrations" }
   resources :articles do
     resources :comments
     collection do

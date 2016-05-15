@@ -57,3 +57,6 @@ gem 'rails_12factor', group: :production
 #gem 'twitter-bootstrap-rails'
 
 gem 'bootstrap-generators', '~> 3.3.1'
+
+gem 'dotenv-rails', :require => 'dotenv/rails-now'
+gem "recaptcha", require: "recaptcha/rails"

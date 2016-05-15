@@ -30,7 +30,7 @@ class ArticlesController < ApplicationController
     @article = current_user.articles.new(article_params)
     @article.groups = current_user.groups
 
-    if @article.save
+    if verify_recaptcha(model: @article) && @article.save
       redirect_to @article
     else
       render 'new'
@@ -53,7 +53,7 @@ class ArticlesController < ApplicationController
 
   def update
     redirect_to root_path, alert: t('post.alert.no_role_permission') if !current_user.permissions[:update]
-    if @article.update(article_params)
+    if verify_recaptcha(model: @article) && @article.update(article_params)
       redirect_to @article
     else
       render 'edit'

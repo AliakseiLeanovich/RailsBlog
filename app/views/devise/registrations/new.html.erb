@@ -18,6 +18,7 @@
                            placeholder: t('devise.registrations.new.password') %>
       <%= f.password_field :password_confirmation, autocomplete: "off", hide_label: true,
                            placeholder: t('devise.registrations.new.password_confirmation') %>
+      <%= recaptcha_tags %>
       <%= f.submit t('devise.registrations.new.finish_sign_up'), class: "btn btn-success" %>
   <% end %>
 

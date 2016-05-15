@@ -41,6 +41,9 @@ en:
   hello: "Hello!"
   salutation: "Register and contact to admin to get all features of our site!"
 
+  captcha:
+    not_verified: "Please verify that you are not a robot"
+
   search:
     placeholder: "Search"
     submit: "Submit"
