@@ -35,8 +35,7 @@ gem 'unicorn'
 # Use Capistrano for deployment
 gem 'capistrano-rails', group: :development
 
-# Use debugger
-gem 'debugger', group: [:development, :test]
+gem 'byebug', group: [:development, :test]
 
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'
