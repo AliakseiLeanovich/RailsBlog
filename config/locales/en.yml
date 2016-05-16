@@ -188,7 +188,7 @@ en:
     back: "Back"
     cancel: "Cancel"
     save: "Save"
-    
+
   role:
     label: "Role"
     roles: "Listing roles"
