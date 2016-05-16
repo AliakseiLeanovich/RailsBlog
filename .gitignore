@@ -21,4 +21,4 @@
 /config/secrets.yml
 
 .env
-
+*.*~
