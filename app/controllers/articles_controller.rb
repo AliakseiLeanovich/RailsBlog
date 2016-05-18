@@ -12,20 +12,15 @@ class ArticlesController < ApplicationController
     else
       @articles = user_articles
     end
-    if @articles.empty? || @articles.nil?
-      redirect_to root_path, alert: t('post.alert.no_group_permission')
-    end
     @articles = @articles.paginate(:page => params[:page]).order('created_at DESC')
 
   end
 
   def new
-    redirect_to root_path, alert: t('post.alert.no_role_permission') if !current_user.permissions[:create]
     @article = Article.new
   end
 
   def create
-    redirect_to root_path, alert: t('post.alert.no_role_permission') if !current_user.permissions[:create]
     @article = current_user.articles.new(article_params)
     @article.groups = current_user.groups
 
@@ -38,20 +33,12 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    if @article.nil? || (current_user.groups&@article.groups).nil?
-      redirect_to root_path, alert: t('post.alert.no_group_permission')
-    end
-    if !current_user.permissions[:read]
-      redirect_to root_path, alert: t('post.alert.no_role_permission')
-    end
   end
 
   def edit
-    redirect_to root_path, alert: t('post.alert.no_role_permission') if !current_user.permissions[:update]
   end
 
   def update
-    redirect_to root_path, alert: t('post.alert.no_role_permission') if !current_user.permissions[:update]
     if verify_recaptcha(model: @article) && @article.update(article_params)
       redirect_to @article
     else
@@ -60,13 +47,9 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    if current_user.permissions[:delete]
-      @article.destroy
-      @article.groups.clear
-      redirect_to articles_path
-    else
-      redirect_to root_path, alert: t('post.alert.no_role_permission')
-    end
+     @article.destroy
+     @article.groups.clear
+     redirect_to articles_path
   end
 
   def stats
@@ -89,9 +72,6 @@ class ArticlesController < ApplicationController
 
   def get_user_article
     @article = Article.find(params[:id])
-    if @article.nil? || (current_user.groups&@article.groups).nil?
-      redirect_to root_path, alert: t('post.alert.no_group_permission')
-    end
     if current_user != @article.user
       redirect_to @article, alert: t('post.alert.permissions')
     end
