@@ -60,3 +60,9 @@ gem 'bootstrap-generators', '~> 3.3.1'
 
 gem 'dotenv-rails', :require => 'dotenv/rails-now'
 gem "recaptcha", require: "recaptcha/rails"
+
+gem "twitter-bootstrap-rails"
+
+gem 'pry-rails', :group => :development
+
+gem 'mapbox-rails'

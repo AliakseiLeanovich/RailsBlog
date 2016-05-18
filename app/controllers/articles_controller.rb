@@ -4,7 +4,6 @@ class ArticlesController < ApplicationController
   before_filter :get_user_article, only: [:edit, :update, :destroy]
 
   def index
-    redirect_to root_path, alert: t('post.alert.no_role_permission') and return if !current_user.permissions[:read]
     user_articles = Article.where(id: current_user.article_ids)
     if params[:user_id]
       @articles = user_articles.where(:user_id => params[:user_id])

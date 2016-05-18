@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :profiles
+
   resources :roles
 
   get 'results/index'
@@ -15,7 +17,7 @@ Rails.application.routes.draw do
   get 'results', to: 'results#index', as: 'results'
   get 'tags/:tag', to: 'articles#index', as: :tag
 
-  root 'welcome#index'
+  root 'profiles#index'
 
   resources :users
   resources :groups

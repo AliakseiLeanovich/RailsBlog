@@ -1,0 +1,55 @@
+<%- model_class = Profile -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<div id='map'></div>
+<script>
+  L.mapbox.accessToken = '<%= Rails.application.secrets.mapbox_access_token %>';
+  var mapboxTiles = L.tileLayer('https://api.mapbox.com/v4/' + '<%= Rails.application.secrets.mapbox_project_id %>' + '/{z}/{x}/{y}.png?access_token=' + L.mapbox.accessToken, {
+    attribution: '© <a href="https://www.mapbox.com/map-feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  });
+
+  var index_map = L.map('map')
+    .addLayer(mapboxTiles)
+    .setView([53.5, 26.5], 7);
+
+  updateMarkers();
+</script>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:lat) %></th>
+      <th><%= model_class.human_attribute_name(:lng) %></th>
+      <th><%= model_class.human_attribute_name(:user_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @profiles.each do |profile| %>
+      <tr>
+        <td><%= link_to profile.name, profile_path(profile) %></td>
+        <td><%= profile.description %></td>
+        <td><%= profile.lat %></td>
+        <td><%= profile.lng %></td>
+        <td><%= profile.user.try(:nickname) %></td>
+        <td><%= profile.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_profile_path(profile), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      profile_path(profile),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_profile_path,
+            :class => 'btn btn-primary' %>
