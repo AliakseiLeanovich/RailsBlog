@@ -1,6 +1,6 @@
 <%- model_class = Profile -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h1><%= t("profile.index_title") %></h1>
 </div>
 <div id='map'></div>
 <script>
@@ -18,13 +18,13 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:lat) %></th>
-      <th><%= model_class.human_attribute_name(:lng) %></th>
-      <th><%= model_class.human_attribute_name(:user_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th><%= t("profile.name") %></th>
+      <th><%= t("profile.description") %></th>
+      <th><%= t("profile.lat") %></th>
+      <th><%= t("profile.lng") %></th>
+      <th><%= t("profile.user") %></th>
+      <th><%= t("profile.created_at") %></th>
+      <th><%= t("profile.actions") %></th>
     </tr>
   </thead>
   <tbody>
@@ -37,12 +37,12 @@
         <td><%= profile.user.try(:nickname) %></td>
         <td><%= profile.created_at %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+          <%= link_to t('.edit', :default => t("profile.edit")),
                       edit_profile_path(profile), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+          <%= link_to t('.destroy', :default => t("profile.delete")),
                       profile_path(profile),
                       :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :data => { :confirm => t('.confirm', :default => t("profile.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>
         </td>
       </tr>
@@ -50,6 +50,6 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<%= link_to t('.new', :default => t("profile.new")),
             new_profile_path,
             :class => 'btn btn-primary' %>
