@@ -23,6 +23,7 @@
       <th><%= t("profile.lat") %></th>
       <th><%= t("profile.lng") %></th>
       <th><%= t("profile.user") %></th>
+      <th><%= t("profile.rating") %></th>
       <th><%= t("profile.created_at") %></th>
       <th><%= t("profile.actions") %></th>
     </tr>
@@ -35,6 +36,7 @@
         <td><%= profile.lat %></td>
         <td><%= profile.lng %></td>
         <td><%= profile.user.try(:nickname) %></td>
+        <td><%= profile.rating %></td>
         <td><%= profile.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("profile.edit")),

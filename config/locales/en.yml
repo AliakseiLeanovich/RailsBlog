@@ -225,7 +225,7 @@ en:
     description: "Description"
     lat: "Lat"
     lng: "Lng"
-    mark: "Mark"
+    rating: "Rating"
     user: "User"
     created_at: "Created at"
     cancel: "Cancel"
